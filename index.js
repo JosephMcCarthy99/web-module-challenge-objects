@@ -33,7 +33,7 @@ Test your createMenuItems function by doing the following:
 
 console.log('task 1b', createMenuItem('pizza', 10, 'Lunch'));
 console.log('task 1b', createMenuItem('cheeseburger', 8, 'Dinner'));
-console.log('task 1b', createMenuItem('bacon', 5, 'Breakfast'));
+console.log('task 1b', createMenuItem('eggs', 5, 'Breakfast'));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 2: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 You're having a lunch special! 25% off for teachers and students, 10% off for everyone else. Add a method to the 
@@ -51,10 +51,16 @@ const burger = {
   name: "Burger", 
   price: 18, 
   category: "Lunch", 
-  
+  discount: function(person){
+    if(person === "student" || person === "teacher"){
+      return this.price - (this.price * 0.25);
+    }else if(person === "public"){
+      return this.price - (this.price * 0.10)
+    }
+  }
 }
 
-
+console.log('task 2', burger.discount("teacher"));
 
 ///////////////Reviews (MVP)///////////////////
 const reviews = [
@@ -72,8 +78,7 @@ const reviews = [
 Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
 */
-
-
+console.log('task 3', reviews("Julius"));
 
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 4: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
